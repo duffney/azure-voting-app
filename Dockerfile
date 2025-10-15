@@ -1,7 +1,7 @@
 #################
 ## build stage ##
 #################
-FROM ghcr.io/duffney/rust:1.79.0 AS builder
+FROM ghcr.io/duffney/rust:1.90.0 AS builder
 WORKDIR /code
 
 # Download crates-io index and fetch dependency code.
@@ -23,9 +23,7 @@ RUN cargo build --release
 ###############
 ## run stage ##
 ###############
-FROM ghcr.io/duffney/debian:11.6
-# FROM debian:bullseye-20211220
-# FROM debian:bullseye-20230411
+FROM ghcr.io/duffney/debian:13.1
 WORKDIR /app
 
 RUN USER=root apt update -y
