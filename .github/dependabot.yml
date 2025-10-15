@@ -1,0 +1,16 @@
+---
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    registries:
+      - ghcr
+registries:
+  ghcr:
+    type: "docker-registry"
+    url: "https://ghcr.io"
+    username: "${{ github.actor }}"
+    password: "${{ secrets.TOKEN }}"
+    replaces-base: true
