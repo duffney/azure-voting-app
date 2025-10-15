@@ -23,7 +23,7 @@ RUN cargo build --release
 ###############
 ## run stage ##
 ###############
-FROM ghcr.io/duffney/debian:13.1
+FROM ghcr.io/duffney/debian:13.1-1-1
 WORKDIR /app
 
 RUN USER=root apt update -y
